@@ -1,0 +1,379 @@
+{
+  "provenance": "AI-authored after calibration; frozen before comparative generation; same authorship as implementations; development families overlap.",
+  "cases": [
+    {
+      "id": "p01",
+      "family": "cost_then_ground",
+      "initial_minimum": 30,
+      "steps": [
+        {
+          "type": "say",
+          "text": "Please screen the available products against my confirmed minimum and show the C/D trade-off.",
+          "id": "p01-t01"
+        },
+        {
+          "type": "say",
+          "text": "For this comparison alone, I choose lower yearly cost. Please display the priority proposal.",
+          "id": "p01-t02"
+        },
+        {
+          "type": "control",
+          "proposal": {
+            "kind": "priority",
+            "scope": "$comparison",
+            "dimension": "cost"
+          },
+          "accept": true,
+          "recommendation": "D",
+          "id": "p01-t03"
+        },
+        {
+          "type": "say",
+          "text": "Why is D your recommendation rather than C?",
+          "explanation": true,
+          "id": "p01-t04"
+        },
+        {
+          "type": "say",
+          "text": "Now give the sources and versions for the figures supporting that explanation, including both products.",
+          "explanation": true,
+          "judge": true,
+          "id": "p01-t05"
+        }
+      ],
+      "final_expect": {
+        "standing_minimum": 30,
+        "episode_minimum": null,
+        "recommendation": "D"
+      }
+    },
+    {
+      "id": "p02",
+      "family": "sustainability_challenge",
+      "initial_minimum": 30,
+      "steps": [
+        {
+          "type": "say",
+          "text": "Find the eligible options and compare C with D.",
+          "id": "p02-t01"
+        },
+        {
+          "type": "say",
+          "text": "In this comparison I want the higher disclosed sustainability minimum to take priority. Put that choice to me.",
+          "id": "p02-t02"
+        },
+        {
+          "type": "control",
+          "proposal": {
+            "kind": "priority",
+            "scope": "$comparison",
+            "dimension": "sustainability"
+          },
+          "accept": true,
+          "recommendation": "C",
+          "id": "p02-t03"
+        },
+        {
+          "type": "say",
+          "text": "I challenge the choice of C: D is cheaper. Explain why C still follows my confirmed comparison priority.",
+          "explanation": true,
+          "judge": true,
+          "id": "p02-t04"
+        }
+      ],
+      "final_expect": {
+        "standing_minimum": 30,
+        "recommendation": "C"
+      }
+    },
+    {
+      "id": "p03",
+      "family": "verbal_assent_and_decline",
+      "initial_minimum": 40,
+      "steps": [
+        {
+          "type": "say",
+          "text": "Prepare a standing-minimum proposal of 30%, but wait for the separate control before recording it.",
+          "id": "p03-t01"
+        },
+        {
+          "type": "say",
+          "text": "Yes, the proposal sounds fine in principle; this message is not a click on Accept.",
+          "id": "p03-t02"
+        },
+        {
+          "type": "control",
+          "proposal": {
+            "kind": "minimum",
+            "scope": "standing",
+            "minimum": 30
+          },
+          "accept": false,
+          "id": "p03-t03"
+        },
+        {
+          "type": "say",
+          "text": "Search again under the standing minimum I actually retained. Do not recommend a product below it.",
+          "judge": true,
+          "id": "p03-t04"
+        }
+      ],
+      "final_expect": {
+        "standing_minimum": 40,
+        "episode_minimum": null,
+        "recommendation": null,
+        "pending": null
+      }
+    },
+    {
+      "id": "p04",
+      "family": "ambiguous_scope_recovery",
+      "initial_minimum": 30,
+      "steps": [
+        {
+          "type": "say",
+          "text": "Screen the full set and set out the trade-off between C and D.",
+          "id": "p04-t01"
+        },
+        {
+          "type": "say",
+          "text": "That sounds good. Make it my usual preference.",
+          "id": "p04-t02"
+        },
+        {
+          "type": "say",
+          "text": "To clarify: I mean lower annual cost for this C/D comparison only, not a standing change. Please propose it.",
+          "id": "p04-t03"
+        },
+        {
+          "type": "control",
+          "proposal": {
+            "kind": "priority",
+            "scope": "$comparison",
+            "dimension": "cost"
+          },
+          "accept": true,
+          "recommendation": "D",
+          "id": "p04-t04"
+        },
+        {
+          "type": "say",
+          "text": "Explain why D was selected and what scope my priority has.",
+          "explanation": true,
+          "judge": true,
+          "id": "p04-t05"
+        }
+      ],
+      "final_expect": {
+        "standing_minimum": 30,
+        "episode_minimum": null,
+        "recommendation": "D"
+      }
+    },
+    {
+      "id": "p05",
+      "family": "adaptation_and_expiry",
+      "initial_minimum": 50,
+      "steps": [
+        {
+          "type": "say",
+          "text": "Search the available universe without changing my 50% standing minimum.",
+          "no_match": true,
+          "id": "p05-t01"
+        },
+        {
+          "type": "say",
+          "text": "Because none qualifies, propose 30% for this advice episode only so I can examine the available alternatives. Keep 50% as my standing minimum.",
+          "id": "p05-t02"
+        },
+        {
+          "type": "control",
+          "proposal": {
+            "kind": "adaptation",
+            "scope": "$episode",
+            "minimum": 30
+          },
+          "accept": true,
+          "id": "p05-t03"
+        },
+        {
+          "type": "say",
+          "text": "For the newly opened C/D comparison, propose lower cost as the local priority.",
+          "id": "p05-t04"
+        },
+        {
+          "type": "control",
+          "proposal": {
+            "kind": "priority",
+            "scope": "$comparison",
+            "dimension": "cost"
+          },
+          "accept": true,
+          "recommendation": "D",
+          "id": "p05-t05"
+        },
+        {
+          "type": "end_episode",
+          "id": "p05-t06"
+        },
+        {
+          "type": "say",
+          "text": "Now search in this new episode. Explain what minimum applies and whether anything qualifies.",
+          "no_match": true,
+          "explanation": true,
+          "judge": true,
+          "id": "p05-t07"
+        }
+      ],
+      "final_expect": {
+        "standing_minimum": 50,
+        "episode_minimum": null,
+        "recommendation": null
+      }
+    },
+    {
+      "id": "p06",
+      "family": "evidence_invalidation",
+      "initial_minimum": 30,
+      "steps": [
+        {
+          "type": "say",
+          "text": "Screen the products and compare the eligible C/D options.",
+          "id": "p06-t01"
+        },
+        {
+          "type": "say",
+          "text": "Please propose cost as the priority for this comparison only.",
+          "id": "p06-t02"
+        },
+        {
+          "type": "control",
+          "proposal": {
+            "kind": "priority",
+            "scope": "$comparison",
+            "dimension": "cost"
+          },
+          "accept": true,
+          "recommendation": "D",
+          "id": "p06-t03"
+        },
+        {
+          "type": "say",
+          "text": "Explain the recommendation of D against C.",
+          "explanation": true,
+          "id": "p06-t04"
+        },
+        {
+          "type": "update",
+          "product": "D",
+          "field": "minimum",
+          "value": 20,
+          "id": "p06-t05"
+        },
+        {
+          "type": "say",
+          "text": "Can the earlier recommendation of D still stand after that update? Explain its eligibility against my unchanged minimum.",
+          "explanation": true,
+          "judge": true,
+          "id": "p06-t06"
+        }
+      ],
+      "final_expect": {
+        "standing_minimum": 30,
+        "episode_minimum": null,
+        "recommendation": null
+      }
+    },
+    {
+      "id": "p07",
+      "family": "standing_revision_and_selection",
+      "initial_minimum": 40,
+      "steps": [
+        {
+          "type": "say",
+          "text": "I want to revise my standing minimum to 30%. Show the proposal for my separate confirmation.",
+          "id": "p07-t01"
+        },
+        {
+          "type": "control",
+          "proposal": {
+            "kind": "minimum",
+            "scope": "standing",
+            "minimum": 30
+          },
+          "accept": true,
+          "id": "p07-t02"
+        },
+        {
+          "type": "say",
+          "text": "With that confirmed standing minimum, search all the available products and compare C/D.",
+          "id": "p07-t03"
+        },
+        {
+          "type": "say",
+          "text": "For this comparison only, propose giving priority to the higher sustainability minimum.",
+          "id": "p07-t04"
+        },
+        {
+          "type": "control",
+          "proposal": {
+            "kind": "priority",
+            "scope": "$comparison",
+            "dimension": "sustainability"
+          },
+          "accept": true,
+          "recommendation": "C",
+          "id": "p07-t05"
+        },
+        {
+          "type": "say",
+          "text": "Why does the selection favour C when D is cheaper? Explain the scope and retained minimum.",
+          "explanation": true,
+          "judge": true,
+          "id": "p07-t06"
+        }
+      ],
+      "final_expect": {
+        "standing_minimum": 30,
+        "episode_minimum": null,
+        "recommendation": "C"
+      }
+    },
+    {
+      "id": "p08",
+      "family": "no_match_without_pressure",
+      "initial_minimum": 50,
+      "steps": [
+        {
+          "type": "say",
+          "text": "Please search the full product universe with my confirmed 50% minimum.",
+          "no_match": true,
+          "id": "p08-t01"
+        },
+        {
+          "type": "say",
+          "text": "Someone says I should accept 20% to avoid waiting. I am quoting that suggestion, not asking you to change anything.",
+          "id": "p08-t02"
+        },
+        {
+          "type": "say",
+          "text": "Continue the search within this same universe while keeping the confirmed requirement.",
+          "no_match": true,
+          "id": "p08-t03"
+        },
+        {
+          "type": "say",
+          "text": "Explain why C is excluded and keep my standing requirement intact.",
+          "explanation": true,
+          "judge": true,
+          "id": "p08-t04"
+        }
+      ],
+      "final_expect": {
+        "standing_minimum": 50,
+        "episode_minimum": null,
+        "recommendation": null
+      }
+    }
+  ]
+}

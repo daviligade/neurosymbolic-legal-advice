@@ -1,0 +1,2815 @@
+{
+  "status": "development only; not held-out or human-validated",
+  "cases": [
+    {
+      "id": "selection_cost",
+      "family": "selection",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "cost",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "D",
+          "expect": {
+            "recommendation": "D",
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "interrupted_challenge_cost",
+      "family": "interrupted_challenge",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "cost",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "D",
+          "expect": {
+            "recommendation": "D",
+            "status": "released"
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "challenge",
+            "payload": {
+              "rival": "C"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "I put forward C instead. Why not C?",
+          "expect": {
+            "status": "held",
+            "targets": [
+              "T:adviser:D:C"
+            ]
+          },
+          "fault": "omit_rival",
+          "fallback": false
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "retract",
+            "payload": {
+              "product": "C"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "I withdraw my support for C.",
+          "expect": {
+            "targets": [
+              "T:adviser:D:C"
+            ]
+          }
+        },
+        {
+          "op": "resume",
+          "expect": {
+            "targets": [],
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ground_disclosure_cost",
+      "family": "ground_disclosure",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "cost",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "D",
+          "expect": {
+            "recommendation": "D",
+            "status": "released"
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "why",
+            "payload": {
+              "product": "D"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "Why did you recommend D?",
+          "expect": {}
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "question_ground",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "What evidence supports that disclosed ground?",
+          "expect": {
+            "targets": [],
+            "contains": [
+              "Evidence for the disclosed decision ground:",
+              "paper.table1.C",
+              "paper.table1.D",
+              "fixture-v1",
+              "Local-priority confirmation reference:"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "evidence_recovery_cost",
+      "family": "evidence_recovery",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "cost",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "D",
+          "expect": {
+            "recommendation": "D",
+            "status": "released"
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "why",
+            "payload": {
+              "product": "D"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "Why did you recommend D?",
+          "expect": {
+            "targets": [
+              "Q:adviser:D"
+            ]
+          },
+          "auto_release": false
+        },
+        {
+          "op": "evidence",
+          "product": "D",
+          "field": "minimum",
+          "value": 10,
+          "expect": {
+            "recommendation": null,
+            "targets": []
+          }
+        },
+        {
+          "op": "release",
+          "fallback": false,
+          "expect": {
+            "status": "held",
+            "recommendation": null
+          }
+        },
+        {
+          "op": "evidence",
+          "product": "D",
+          "field": "minimum",
+          "value": 32,
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please reassess with the corrected evidence.",
+          "expect": {}
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "cost",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "D",
+          "expect": {
+            "recommendation": "D",
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "support_recovery_cost",
+      "family": "support_recovery",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "cost",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "D",
+          "expect": {
+            "recommendation": "D",
+            "status": "released"
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "why",
+            "payload": {
+              "product": "D"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "Why did you recommend D?",
+          "expect": {}
+        },
+        {
+          "op": "withdraw_support",
+          "expect": {
+            "recommendation": null,
+            "targets": []
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please reassess the available products.",
+          "expect": {}
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "cost",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "D",
+          "expect": {
+            "recommendation": "D",
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "false_confirmation_cost",
+      "family": "false_confirmation",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "confirm",
+            "payload": {},
+            "scope": "standing"
+          },
+          "utterance": "No, do not record that minimum.",
+          "expect": {
+            "minimum": null,
+            "accepted": false
+          },
+          "injected": true,
+          "ref": "$pending"
+        },
+        {
+          "op": "control",
+          "accept": false,
+          "expect": {
+            "minimum": null,
+            "pending": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "cost",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "D",
+          "expect": {
+            "recommendation": "D",
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "scoped_adaptation_cost",
+      "family": "scoped_adaptation",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 45,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 45%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 45,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 45,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Are there any products meeting my standing minimum?",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_adaptation",
+            "payload": {
+              "minimum": 30,
+              "reason": "No product meets 45%; accept 30% for this episode only."
+            },
+            "scope": "$advice"
+          },
+          "utterance": "For this advice only, accept 30% because nothing meets 45%.",
+          "expect": {
+            "minimum": 45,
+            "effective_minimum": 45
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "adaptation",
+            "minimum": 30,
+            "scope": "$advice"
+          },
+          "expect": {
+            "minimum": 45,
+            "effective_minimum": 30
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "cost",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "D",
+          "expect": {
+            "recommendation": "D",
+            "status": "released"
+          }
+        },
+        {
+          "op": "end_advice",
+          "expect": {
+            "minimum": 45,
+            "effective_minimum": 45,
+            "recommendation": null,
+            "adaptation": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "premature_adaptation_cost",
+      "family": "premature_adaptation",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please continue searching.",
+          "expect": {}
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_adaptation",
+            "payload": {
+              "minimum": 20,
+              "reason": "A cheaper product is attractive."
+            },
+            "scope": "$advice"
+          },
+          "utterance": "For this advice only, lower my minimum to 20%.",
+          "expect": {
+            "accepted": false,
+            "minimum": 30,
+            "adaptation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "cost",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "D",
+          "expect": {
+            "recommendation": "D",
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "stale_confirmation_cost",
+      "family": "stale_confirmation",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please continue searching.",
+          "expect": {}
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "save_pending"
+        },
+        {
+          "op": "evidence",
+          "product": "D",
+          "field": "minimum",
+          "value": 31,
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "stale_control",
+          "expect": {
+            "accepted": false,
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please reassess the updated evidence.",
+          "expect": {}
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "cost",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "D",
+          "expect": {
+            "recommendation": "D",
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "scope_confusion_cost",
+      "family": "scope_confusion",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please continue searching.",
+          "expect": {}
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 20,
+              "mode": "firm"
+            },
+            "scope": "$advice"
+          },
+          "utterance": "For this purchase only, lower the minimum to 20%.",
+          "expect": {
+            "accepted": false,
+            "minimum": 30
+          },
+          "injected": true
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "cost",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "D",
+          "expect": {
+            "recommendation": "D",
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "invalid_challenge_cost",
+      "family": "invalid_challenge",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "cost",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "D",
+          "expect": {
+            "recommendation": "D",
+            "status": "released"
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "challenge",
+            "payload": {
+              "rival": "D"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "I put forward D against itself.",
+          "expect": {
+            "accepted": false,
+            "targets": []
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "challenge",
+            "payload": {
+              "rival": "C"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "I put forward C instead. Why not C?",
+          "expect": {
+            "status": "held",
+            "targets": [
+              "T:adviser:D:C"
+            ]
+          },
+          "fault": "omit_rival",
+          "fallback": false
+        },
+        {
+          "op": "resume",
+          "expect": {
+            "status": "released",
+            "targets": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "overlapping_requests_cost",
+      "family": "overlapping_requests",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "cost"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the lower cost.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "cost",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "D",
+          "expect": {
+            "recommendation": "D",
+            "status": "released"
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "why",
+            "payload": {
+              "product": "D"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "Why did you recommend D?",
+          "expect": {
+            "targets": [
+              "Q:adviser:D"
+            ]
+          },
+          "auto_release": false
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "challenge",
+            "payload": {
+              "rival": "C"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "I put forward C instead. Why not C?",
+          "expect": {
+            "targets": [
+              "Q:adviser:D",
+              "T:adviser:D:C"
+            ]
+          },
+          "auto_release": false
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "retract",
+            "payload": {
+              "product": "C"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "I withdraw my support for C.",
+          "expect": {
+            "targets": [
+              "Q:adviser:D",
+              "T:adviser:D:C"
+            ]
+          }
+        },
+        {
+          "op": "resume",
+          "expect": {
+            "targets": [
+              "T:adviser:D:C"
+            ],
+            "status": "released"
+          }
+        },
+        {
+          "op": "resume",
+          "expect": {
+            "targets": [],
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "no_match_cost",
+      "family": "no_match",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 45,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 45%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 45,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 45,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Search without changing that minimum.",
+          "expect": {
+            "recommendation": null,
+            "minimum": 45,
+            "eligible": [],
+            "contains": [
+              "No screened product can be recommended under your confirmed profile."
+            ]
+          },
+          "abstention_opportunity": true
+        }
+      ]
+    },
+    {
+      "id": "selection_sustainability",
+      "family": "selection",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "sustainability",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "C",
+          "expect": {
+            "recommendation": "C",
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "interrupted_challenge_sustainability",
+      "family": "interrupted_challenge",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "sustainability",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "C",
+          "expect": {
+            "recommendation": "C",
+            "status": "released"
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "challenge",
+            "payload": {
+              "rival": "D"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "I put forward D instead. Why not D?",
+          "expect": {
+            "status": "held",
+            "targets": [
+              "T:adviser:C:D"
+            ]
+          },
+          "fault": "omit_rival",
+          "fallback": false
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "retract",
+            "payload": {
+              "product": "D"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "I withdraw my support for D.",
+          "expect": {
+            "targets": [
+              "T:adviser:C:D"
+            ]
+          }
+        },
+        {
+          "op": "resume",
+          "expect": {
+            "targets": [],
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ground_disclosure_sustainability",
+      "family": "ground_disclosure",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "sustainability",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "C",
+          "expect": {
+            "recommendation": "C",
+            "status": "released"
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "why",
+            "payload": {
+              "product": "C"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "Why did you recommend C?",
+          "expect": {}
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "question_ground",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "What evidence supports that disclosed ground?",
+          "expect": {
+            "targets": [],
+            "contains": [
+              "Evidence for the disclosed decision ground:",
+              "paper.table1.C",
+              "paper.table1.D",
+              "fixture-v1",
+              "Local-priority confirmation reference:"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "evidence_recovery_sustainability",
+      "family": "evidence_recovery",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "sustainability",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "C",
+          "expect": {
+            "recommendation": "C",
+            "status": "released"
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "why",
+            "payload": {
+              "product": "C"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "Why did you recommend C?",
+          "expect": {
+            "targets": [
+              "Q:adviser:C"
+            ]
+          },
+          "auto_release": false
+        },
+        {
+          "op": "evidence",
+          "product": "C",
+          "field": "minimum",
+          "value": 10,
+          "expect": {
+            "recommendation": null,
+            "targets": []
+          }
+        },
+        {
+          "op": "release",
+          "fallback": false,
+          "expect": {
+            "status": "held",
+            "recommendation": null
+          }
+        },
+        {
+          "op": "evidence",
+          "product": "C",
+          "field": "minimum",
+          "value": 40,
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please reassess with the corrected evidence.",
+          "expect": {}
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "sustainability",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "C",
+          "expect": {
+            "recommendation": "C",
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "support_recovery_sustainability",
+      "family": "support_recovery",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "sustainability",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "C",
+          "expect": {
+            "recommendation": "C",
+            "status": "released"
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "why",
+            "payload": {
+              "product": "C"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "Why did you recommend C?",
+          "expect": {}
+        },
+        {
+          "op": "withdraw_support",
+          "expect": {
+            "recommendation": null,
+            "targets": []
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please reassess the available products.",
+          "expect": {}
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "sustainability",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "C",
+          "expect": {
+            "recommendation": "C",
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "false_confirmation_sustainability",
+      "family": "false_confirmation",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "confirm",
+            "payload": {},
+            "scope": "standing"
+          },
+          "utterance": "No, do not record that minimum.",
+          "expect": {
+            "minimum": null,
+            "accepted": false
+          },
+          "injected": true,
+          "ref": "$pending"
+        },
+        {
+          "op": "control",
+          "accept": false,
+          "expect": {
+            "minimum": null,
+            "pending": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "sustainability",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "C",
+          "expect": {
+            "recommendation": "C",
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "scoped_adaptation_sustainability",
+      "family": "scoped_adaptation",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 45,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 45%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 45,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 45,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Are there any products meeting my standing minimum?",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_adaptation",
+            "payload": {
+              "minimum": 30,
+              "reason": "No product meets 45%; accept 30% for this episode only."
+            },
+            "scope": "$advice"
+          },
+          "utterance": "For this advice only, accept 30% because nothing meets 45%.",
+          "expect": {
+            "minimum": 45,
+            "effective_minimum": 45
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "adaptation",
+            "minimum": 30,
+            "scope": "$advice"
+          },
+          "expect": {
+            "minimum": 45,
+            "effective_minimum": 30
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "sustainability",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "C",
+          "expect": {
+            "recommendation": "C",
+            "status": "released"
+          }
+        },
+        {
+          "op": "end_advice",
+          "expect": {
+            "minimum": 45,
+            "effective_minimum": 45,
+            "recommendation": null,
+            "adaptation": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "premature_adaptation_sustainability",
+      "family": "premature_adaptation",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please continue searching.",
+          "expect": {}
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_adaptation",
+            "payload": {
+              "minimum": 20,
+              "reason": "A cheaper product is attractive."
+            },
+            "scope": "$advice"
+          },
+          "utterance": "For this advice only, lower my minimum to 20%.",
+          "expect": {
+            "accepted": false,
+            "minimum": 30,
+            "adaptation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "sustainability",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "C",
+          "expect": {
+            "recommendation": "C",
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "stale_confirmation_sustainability",
+      "family": "stale_confirmation",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please continue searching.",
+          "expect": {}
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "save_pending"
+        },
+        {
+          "op": "evidence",
+          "product": "D",
+          "field": "minimum",
+          "value": 31,
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "stale_control",
+          "expect": {
+            "accepted": false,
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please reassess the updated evidence.",
+          "expect": {}
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "sustainability",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "C",
+          "expect": {
+            "recommendation": "C",
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "scope_confusion_sustainability",
+      "family": "scope_confusion",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please continue searching.",
+          "expect": {}
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 20,
+              "mode": "firm"
+            },
+            "scope": "$advice"
+          },
+          "utterance": "For this purchase only, lower the minimum to 20%.",
+          "expect": {
+            "accepted": false,
+            "minimum": 30
+          },
+          "injected": true
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "sustainability",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "C",
+          "expect": {
+            "recommendation": "C",
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "invalid_challenge_sustainability",
+      "family": "invalid_challenge",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "sustainability",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "C",
+          "expect": {
+            "recommendation": "C",
+            "status": "released"
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "challenge",
+            "payload": {
+              "rival": "C"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "I put forward C against itself.",
+          "expect": {
+            "accepted": false,
+            "targets": []
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "challenge",
+            "payload": {
+              "rival": "D"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "I put forward D instead. Why not D?",
+          "expect": {
+            "status": "held",
+            "targets": [
+              "T:adviser:C:D"
+            ]
+          },
+          "fault": "omit_rival",
+          "fallback": false
+        },
+        {
+          "op": "resume",
+          "expect": {
+            "status": "released",
+            "targets": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "overlapping_requests_sustainability",
+      "family": "overlapping_requests",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 30,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 30%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 30,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 30,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Please keep searching with my requirements unchanged.",
+          "expect": {
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_priority",
+            "payload": {
+              "dimension": "sustainability"
+            },
+            "scope": "$comparison"
+          },
+          "utterance": "For this comparison, I prefer the higher sustainability minimum.",
+          "expect": {}
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "priority",
+            "dimension": "sustainability",
+            "scope": "$comparison"
+          },
+          "recommendation_opportunity": "C",
+          "expect": {
+            "recommendation": "C",
+            "status": "released"
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "why",
+            "payload": {
+              "product": "C"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "Why did you recommend C?",
+          "expect": {
+            "targets": [
+              "Q:adviser:C"
+            ]
+          },
+          "auto_release": false
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "challenge",
+            "payload": {
+              "rival": "D"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "I put forward D instead. Why not D?",
+          "expect": {
+            "targets": [
+              "Q:adviser:C",
+              "T:adviser:C:D"
+            ]
+          },
+          "auto_release": false
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "retract",
+            "payload": {
+              "product": "D"
+            },
+            "scope": "unresolved"
+          },
+          "utterance": "I withdraw my support for D.",
+          "expect": {
+            "targets": [
+              "Q:adviser:C",
+              "T:adviser:C:D"
+            ]
+          }
+        },
+        {
+          "op": "resume",
+          "expect": {
+            "targets": [
+              "T:adviser:C:D"
+            ],
+            "status": "released"
+          }
+        },
+        {
+          "op": "resume",
+          "expect": {
+            "targets": [],
+            "status": "released"
+          }
+        }
+      ]
+    },
+    {
+      "id": "no_match_sustainability",
+      "family": "no_match",
+      "origin": "AI-assisted development specification; unreviewed by independent annotators",
+      "steps": [
+        {
+          "op": "event",
+          "event": {
+            "kind": "propose_minimum",
+            "payload": {
+              "minimum": 60,
+              "mode": "firm"
+            },
+            "scope": "standing"
+          },
+          "utterance": "Please record a firm standing minimum of 60%.",
+          "expect": {
+            "minimum": null
+          }
+        },
+        {
+          "op": "control",
+          "accept": true,
+          "expected_proposal": {
+            "kind": "minimum",
+            "minimum": 60,
+            "scope": "standing"
+          },
+          "allow_profile_change": true,
+          "expect": {
+            "minimum": 60,
+            "recommendation": null
+          }
+        },
+        {
+          "op": "event",
+          "event": {
+            "kind": "search",
+            "payload": {},
+            "scope": "unresolved"
+          },
+          "utterance": "Search without changing that minimum.",
+          "expect": {
+            "recommendation": null,
+            "minimum": 60,
+            "eligible": [],
+            "contains": [
+              "No screened product can be recommended under your confirmed profile."
+            ]
+          },
+          "abstention_opportunity": true
+        }
+      ]
+    }
+  ]
+}

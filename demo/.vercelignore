@@ -1,0 +1,12 @@
+.DS_Store
+**/.DS_Store
+.git
+__pycache__
+**/__pycache__
+*.pyc
+tests
+build
+.env*
+server.py
+enable_groq.py
+ENGINE_PROVENANCE.json

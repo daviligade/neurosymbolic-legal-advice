@@ -1,0 +1,18 @@
+{
+  "source": "Evaluated research controller distributed with this study",
+  "date": "2026-10-30",
+  "note": "The executable definitions in advice match the evaluated implementation; only the Libra module's introductory documentation differs. The separate demo_engine.py adapter provides visitor-facing templates and expands an evidence-first request into ordinary checked protocol moves. It also handles support withdrawal before public ground introduction. These demonstration adaptations are separately tested and are not substituted into the reported research results.",
+  "sha256": {
+    "advice/__init__.py": "6f4f6948f76c833ea25dad3b60683a2da3b4e55149013345ccc421359014e9f3",
+    "advice/engine.py": "b6109cd4c44f3d00a455c62533a5d8b1b2b8d7f4f33278a649679f713fc3e542",
+    "advice/libra.py": "121b0cb723370ca6b0100dba11dd94f9f1c76453d3f9c81eb311d285003eb6a5",
+    "advice/tracker.py": "5a14cb57d40b90f5a8676f8ba70ff3c8a2b252676c71474aea66ee2cd3c1741b"
+  },
+  "live_interpreter": "Optional Groq-hosted openai/gpt-oss-120b, used only for this demonstration. Natural-language events are validated and confirmed through the controller; no live model generates the released advice. This is separate from the models and results evaluated in the paper.",
+  "evaluated_sha256": {
+    "advice/__init__.py": "6f4f6948f76c833ea25dad3b60683a2da3b4e55149013345ccc421359014e9f3",
+    "advice/engine.py": "b6109cd4c44f3d00a455c62533a5d8b1b2b8d7f4f33278a649679f713fc3e542",
+    "advice/libra.py": "e79239ef34fdaf83bc4c669d4c5873e5c841ab8865077d9eeb38975c3843a19c",
+    "advice/tracker.py": "5a14cb57d40b90f5a8676f8ba70ff3c8a2b252676c71474aea66ee2cd3c1741b"
+  }
+}

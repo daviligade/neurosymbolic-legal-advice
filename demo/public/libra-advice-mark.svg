@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 102" fill="none">
+  <title>LIBRA-ADVICE: L with scales</title>
+  <path d="M16 0H80Q96 0 96 16V64Q96 102 58 102H16Q0 102 0 86V16Q0 0 16 0Z" fill="#162d32"/>
+  <g fill="#fff">
+    <path d="M28 21H53V25C46 25 44 28 44 34V73C44 79 46 81 52 81H60C69 81 74 74 77 66H80L77 87H27V83H29C35 83 36 80 36 74V34C36 28 34 25 28 25Z"/>
+    <path d="M14 48H34C32.5 58.7 15.5 58.7 14 48Z"/>
+    <path d="M58 57H78C76.5 67.7 59.5 67.7 58 57Z"/>
+  </g>
+  <g stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 30L68 39" stroke-width="3.2"/>
+    <path d="M16.8 44.8L24 30L31.2 44.8"/>
+    <path d="M60.8 53.8L68 39L75.2 53.8"/>
+  </g>
+</svg>

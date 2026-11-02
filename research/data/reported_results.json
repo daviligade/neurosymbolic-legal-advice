@@ -1,0 +1,764 @@
+{
+  "deterministic": {
+    "libra": {
+      "dialogues": 26,
+      "families": 13,
+      "completed": 26,
+      "transitions": 202,
+      "protected_turns": 176,
+      "unauthorised_standing_changes": 0,
+      "recommendation_opportunities": 28,
+      "correct_new_recommendations": 28,
+      "abstention_opportunities": 2
+    },
+    "conventional": {
+      "dialogues": 26,
+      "families": 13,
+      "completed": 26,
+      "transitions": 202,
+      "protected_turns": 176,
+      "unauthorised_standing_changes": 0,
+      "recommendation_opportunities": 28,
+      "correct_new_recommendations": 28,
+      "abstention_opportunities": 2
+    }
+  },
+  "bounded": {
+    "kind": "bounded differential exploration",
+    "initial_states": 2,
+    "alphabet_size": 8,
+    "max_sequence_length": 4,
+    "sequences": 9360,
+    "paired_transition_checks": 36112,
+    "rejected_transitions_per_tracker": 24758,
+    "mismatches": [],
+    "limits": "Specified alphabet and depth only; shared author and specification; no proof of general equivalence."
+  },
+  "primary_complete_panels": 22,
+  "item_level_complete_panels": 26,
+  "recovered_complete_panels": 31,
+  "valid_provider_item_assessments": 95,
+  "counts_by_arm": {
+    "llm_only": {
+      "complete_panels": 7,
+      "scheduled_items": 8,
+      "criteria": {
+        "intent_alignment": {
+          "individual_counts": {
+            "openai": {
+              "pass": 7,
+              "fail": 1
+            },
+            "anthropic": {
+              "pass": 5,
+              "uncertain": 2
+            },
+            "google": {
+              "pass": 8
+            }
+          },
+          "majority_counts": {
+            "pass": 6,
+            "unresolved": 1
+          },
+          "unanimous_cells": 5
+        },
+        "scope_fidelity": {
+          "individual_counts": {
+            "openai": {
+              "pass": 8
+            },
+            "anthropic": {
+              "pass": 4,
+              "uncertain": 2,
+              "fail": 1
+            },
+            "google": {
+              "pass": 6,
+              "fail": 2
+            }
+          },
+          "majority_counts": {
+            "pass": 5,
+            "unresolved": 1,
+            "fail": 1
+          },
+          "unanimous_cells": 4
+        },
+        "explanation_responsiveness": {
+          "individual_counts": {
+            "openai": {
+              "pass": 5,
+              "not_applicable": 1,
+              "fail": 2
+            },
+            "anthropic": {
+              "pass": 4,
+              "not_applicable": 1,
+              "uncertain": 1,
+              "fail": 1
+            },
+            "google": {
+              "pass": 5,
+              "fail": 3
+            }
+          },
+          "majority_counts": {
+            "pass": 4,
+            "unresolved": 1,
+            "fail": 2
+          },
+          "unanimous_cells": 5
+        },
+        "evidence_faithfulness": {
+          "individual_counts": {
+            "openai": {
+              "fail": 4,
+              "pass": 4
+            },
+            "anthropic": {
+              "pass": 4,
+              "fail": 3
+            },
+            "google": {
+              "pass": 5,
+              "fail": 3
+            }
+          },
+          "majority_counts": {
+            "pass": 4,
+            "fail": 3
+          },
+          "unanimous_cells": 7
+        },
+        "clarification_proportionality": {
+          "individual_counts": {
+            "openai": {
+              "not_applicable": 8
+            },
+            "anthropic": {
+              "not_applicable": 7
+            },
+            "google": {
+              "not_applicable": 8
+            }
+          },
+          "majority_counts": {
+            "not_applicable": 7
+          },
+          "unanimous_cells": 7
+        }
+      }
+    },
+    "controller_only": {
+      "complete_panels": 8,
+      "scheduled_items": 8,
+      "criteria": {
+        "intent_alignment": {
+          "individual_counts": {
+            "openai": {
+              "pass": 8
+            },
+            "anthropic": {
+              "uncertain": 1,
+              "pass": 7
+            },
+            "google": {
+              "pass": 8
+            }
+          },
+          "majority_counts": {
+            "pass": 8
+          },
+          "unanimous_cells": 7
+        },
+        "scope_fidelity": {
+          "individual_counts": {
+            "openai": {
+              "pass": 8
+            },
+            "anthropic": {
+              "pass": 7,
+              "uncertain": 1
+            },
+            "google": {
+              "pass": 8
+            }
+          },
+          "majority_counts": {
+            "pass": 8
+          },
+          "unanimous_cells": 7
+        },
+        "explanation_responsiveness": {
+          "individual_counts": {
+            "openai": {
+              "pass": 7,
+              "not_applicable": 1
+            },
+            "anthropic": {
+              "pass": 6,
+              "not_applicable": 1,
+              "uncertain": 1
+            },
+            "google": {
+              "pass": 7,
+              "not_applicable": 1
+            }
+          },
+          "majority_counts": {
+            "pass": 7,
+            "not_applicable": 1
+          },
+          "unanimous_cells": 7
+        },
+        "evidence_faithfulness": {
+          "individual_counts": {
+            "openai": {
+              "pass": 8
+            },
+            "anthropic": {
+              "pass": 8
+            },
+            "google": {
+              "pass": 8
+            }
+          },
+          "majority_counts": {
+            "pass": 8
+          },
+          "unanimous_cells": 8
+        },
+        "clarification_proportionality": {
+          "individual_counts": {
+            "openai": {
+              "not_applicable": 8
+            },
+            "anthropic": {
+              "not_applicable": 8
+            },
+            "google": {
+              "not_applicable": 8
+            }
+          },
+          "majority_counts": {
+            "not_applicable": 8
+          },
+          "unanimous_cells": 8
+        }
+      }
+    },
+    "conventional": {
+      "complete_panels": 8,
+      "scheduled_items": 8,
+      "criteria": {
+        "intent_alignment": {
+          "individual_counts": {
+            "openai": {
+              "pass": 8
+            },
+            "anthropic": {
+              "pass": 8
+            },
+            "google": {
+              "pass": 8
+            }
+          },
+          "majority_counts": {
+            "pass": 8
+          },
+          "unanimous_cells": 8
+        },
+        "scope_fidelity": {
+          "individual_counts": {
+            "openai": {
+              "pass": 8
+            },
+            "anthropic": {
+              "pass": 7,
+              "uncertain": 1
+            },
+            "google": {
+              "pass": 7,
+              "fail": 1
+            }
+          },
+          "majority_counts": {
+            "pass": 7,
+            "unresolved": 1
+          },
+          "unanimous_cells": 7
+        },
+        "explanation_responsiveness": {
+          "individual_counts": {
+            "openai": {
+              "pass": 7,
+              "not_applicable": 1
+            },
+            "anthropic": {
+              "pass": 5,
+              "not_applicable": 1,
+              "uncertain": 2
+            },
+            "google": {
+              "pass": 7,
+              "fail": 1
+            }
+          },
+          "majority_counts": {
+            "pass": 7,
+            "unresolved": 1
+          },
+          "unanimous_cells": 5
+        },
+        "evidence_faithfulness": {
+          "individual_counts": {
+            "openai": {
+              "pass": 8
+            },
+            "anthropic": {
+              "pass": 8
+            },
+            "google": {
+              "pass": 8
+            }
+          },
+          "majority_counts": {
+            "pass": 8
+          },
+          "unanimous_cells": 8
+        },
+        "clarification_proportionality": {
+          "individual_counts": {
+            "openai": {
+              "not_applicable": 8
+            },
+            "anthropic": {
+              "not_applicable": 8
+            },
+            "google": {
+              "not_applicable": 8
+            }
+          },
+          "majority_counts": {
+            "not_applicable": 8
+          },
+          "unanimous_cells": 8
+        }
+      }
+    },
+    "libra": {
+      "complete_panels": 8,
+      "scheduled_items": 8,
+      "criteria": {
+        "intent_alignment": {
+          "individual_counts": {
+            "openai": {
+              "pass": 8
+            },
+            "anthropic": {
+              "uncertain": 3,
+              "pass": 5
+            },
+            "google": {
+              "pass": 6,
+              "fail": 2
+            }
+          },
+          "majority_counts": {
+            "pass": 6,
+            "unresolved": 2
+          },
+          "unanimous_cells": 5
+        },
+        "scope_fidelity": {
+          "individual_counts": {
+            "openai": {
+              "pass": 8
+            },
+            "anthropic": {
+              "pass": 7,
+              "uncertain": 1
+            },
+            "google": {
+              "pass": 7,
+              "fail": 1
+            }
+          },
+          "majority_counts": {
+            "pass": 8
+          },
+          "unanimous_cells": 6
+        },
+        "explanation_responsiveness": {
+          "individual_counts": {
+            "openai": {
+              "pass": 7,
+              "not_applicable": 1
+            },
+            "anthropic": {
+              "pass": 5,
+              "not_applicable": 1,
+              "uncertain": 2
+            },
+            "google": {
+              "pass": 7,
+              "fail": 1
+            }
+          },
+          "majority_counts": {
+            "pass": 6,
+            "unresolved": 2
+          },
+          "unanimous_cells": 5
+        },
+        "evidence_faithfulness": {
+          "individual_counts": {
+            "openai": {
+              "pass": 8
+            },
+            "anthropic": {
+              "pass": 8
+            },
+            "google": {
+              "pass": 8
+            }
+          },
+          "majority_counts": {
+            "pass": 8
+          },
+          "unanimous_cells": 8
+        },
+        "clarification_proportionality": {
+          "individual_counts": {
+            "openai": {
+              "not_applicable": 8
+            },
+            "anthropic": {
+              "not_applicable": 8
+            },
+            "google": {
+              "not_applicable": 8
+            }
+          },
+          "majority_counts": {
+            "not_applicable": 8
+          },
+          "unanimous_cells": 8
+        }
+      }
+    }
+  },
+  "paired_evidence_majorities": {
+    "llm_only": {
+      "pass": 4,
+      "fail": 3
+    },
+    "controller_only": {
+      "pass": 7
+    },
+    "conventional": {
+      "pass": 7
+    },
+    "libra": {
+      "pass": 7
+    }
+  },
+  "jointly_complete_scenarios": [
+    "p02",
+    "p03",
+    "p04",
+    "p05",
+    "p06",
+    "p07",
+    "p08"
+  ],
+  "criterion_cells": 155,
+  "unanimous_cells": 133,
+  "majority_counts": {
+    "not_applicable": 32,
+    "pass": 108,
+    "fail": 6,
+    "unresolved": 9
+  },
+  "leave_one_provider_out_changed_cells": {
+    "openai": 12,
+    "anthropic": 2,
+    "google": 15
+  },
+  "recommendation_metric_sensitivity": {
+    "definitions": "Strict frozen action+new eligible record; post-hoc remove action label; post-hoc allow later new eligible record before evidence/episode change. These are overlapping descriptive checks, not additional samples.",
+    "opportunities": [
+      {
+        "arm": "conventional",
+        "scenario_id": "p05",
+        "step_id": "p05-t05",
+        "product": "D",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "llm_only",
+        "scenario_id": "p05",
+        "step_id": "p05-t05",
+        "product": "D",
+        "frozen_strict": false,
+        "posthoc_state_at_opportunity": false,
+        "posthoc_state_before_environment": false
+      },
+      {
+        "arm": "conventional",
+        "scenario_id": "p02",
+        "step_id": "p02-t03",
+        "product": "C",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "llm_only",
+        "scenario_id": "p01",
+        "step_id": "p01-t03",
+        "product": "D",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "controller_only",
+        "scenario_id": "p07",
+        "step_id": "p07-t05",
+        "product": "C",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "controller_only",
+        "scenario_id": "p02",
+        "step_id": "p02-t03",
+        "product": "C",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "conventional",
+        "scenario_id": "p06",
+        "step_id": "p06-t03",
+        "product": "D",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "controller_only",
+        "scenario_id": "p01",
+        "step_id": "p01-t03",
+        "product": "D",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "libra",
+        "scenario_id": "p05",
+        "step_id": "p05-t05",
+        "product": "D",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "libra",
+        "scenario_id": "p07",
+        "step_id": "p07-t05",
+        "product": "C",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "conventional",
+        "scenario_id": "p04",
+        "step_id": "p04-t04",
+        "product": "D",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "llm_only",
+        "scenario_id": "p04",
+        "step_id": "p04-t04",
+        "product": "D",
+        "frozen_strict": false,
+        "posthoc_state_at_opportunity": false,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "controller_only",
+        "scenario_id": "p05",
+        "step_id": "p05-t05",
+        "product": "D",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "libra",
+        "scenario_id": "p04",
+        "step_id": "p04-t04",
+        "product": "D",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "llm_only",
+        "scenario_id": "p02",
+        "step_id": "p02-t03",
+        "product": "C",
+        "frozen_strict": false,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "libra",
+        "scenario_id": "p02",
+        "step_id": "p02-t03",
+        "product": "C",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "llm_only",
+        "scenario_id": "p07",
+        "step_id": "p07-t05",
+        "product": "C",
+        "frozen_strict": false,
+        "posthoc_state_at_opportunity": false,
+        "posthoc_state_before_environment": false
+      },
+      {
+        "arm": "conventional",
+        "scenario_id": "p07",
+        "step_id": "p07-t05",
+        "product": "C",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "libra",
+        "scenario_id": "p06",
+        "step_id": "p06-t03",
+        "product": "D",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "conventional",
+        "scenario_id": "p01",
+        "step_id": "p01-t03",
+        "product": "D",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "libra",
+        "scenario_id": "p01",
+        "step_id": "p01-t03",
+        "product": "D",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "controller_only",
+        "scenario_id": "p06",
+        "step_id": "p06-t03",
+        "product": "D",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "llm_only",
+        "scenario_id": "p06",
+        "step_id": "p06-t03",
+        "product": "D",
+        "frozen_strict": false,
+        "posthoc_state_at_opportunity": false,
+        "posthoc_state_before_environment": true
+      },
+      {
+        "arm": "controller_only",
+        "scenario_id": "p04",
+        "step_id": "p04-t04",
+        "product": "D",
+        "frozen_strict": true,
+        "posthoc_state_at_opportunity": true,
+        "posthoc_state_before_environment": true
+      }
+    ],
+    "counts": {
+      "llm_only": {
+        "frozen_strict": 1,
+        "posthoc_state_at_opportunity": 2,
+        "posthoc_state_before_environment": 4
+      },
+      "controller_only": {
+        "frozen_strict": 6,
+        "posthoc_state_at_opportunity": 6,
+        "posthoc_state_before_environment": 6
+      },
+      "conventional": {
+        "frozen_strict": 6,
+        "posthoc_state_at_opportunity": 6,
+        "posthoc_state_before_environment": 6
+      },
+      "libra": {
+        "frozen_strict": 6,
+        "posthoc_state_at_opportunity": 6,
+        "posthoc_state_before_environment": 6
+      }
+    }
+  },
+  "request_tracking": {
+    "controller_only": {
+      "cases": 4,
+      "cases_meeting_all_checkpoints": 0,
+      "initial_selections_correct": 4,
+      "initial_selection_opportunities": 4,
+      "incomplete_replies_held": 2,
+      "incomplete_reply_checks": 2,
+      "resumption_attempts": 6,
+      "resumptions_releasing_answer": 0
+    },
+    "conventional": {
+      "cases": 4,
+      "cases_meeting_all_checkpoints": 4,
+      "initial_selections_correct": 4,
+      "initial_selection_opportunities": 4,
+      "incomplete_replies_held": 2,
+      "incomplete_reply_checks": 2,
+      "resumption_attempts": 6,
+      "resumptions_releasing_answer": 6
+    },
+    "libra": {
+      "cases": 4,
+      "cases_meeting_all_checkpoints": 4,
+      "initial_selections_correct": 4,
+      "initial_selection_opportunities": 4,
+      "incomplete_replies_held": 2,
+      "incomplete_reply_checks": 2,
+      "resumption_attempts": 6,
+      "resumptions_releasing_answer": 6
+    }
+  }
+}
